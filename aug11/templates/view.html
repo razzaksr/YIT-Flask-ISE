@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block title%}View Accounts{%endblock%}
+{%block frames%}
+    <table>
+        <thead>
+            <tr><th>Account holder</th><th>Account number</th><th>account balance</th></tr>
+        </thead>
+        <tbody>
+            {%for account in customers%}
+                <tr>
+                    <!-- filters -->
+                    <td>{{account.holder|upper}}</td><td>{{account.accno}}</td><td>{{account.balance|round(2)}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+{%endblock%}

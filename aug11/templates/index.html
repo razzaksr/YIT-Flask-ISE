@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{%from "textbox.html" import boxes%}
+{%block title%}BMI Calculator{%endblock%}
+{%block frames%}
+    <h1>BMI Calculator</h1>
+    <form action="/findbmi" method="post">
+        {{boxes("weight","enter the weight")}}
+        {{boxes("height","enter the height")}}
+        <input type="submit" value="BMI">
+    </form>
+    {%if result%}
+        <h1>Your BMI is {{result}}</h1>
+        {% if result<=18 %}
+            <p>Underweight</p>
+        {%elif 18<result<=24%}
+            <p>Normal</p>
+        {%elif 24<result<=30%}
+            <p>Overweight</p>
+        {%else%}
+            <p>Obese</p>
+        {%endif%}
+    {%endif%}
+{%endblock%}
