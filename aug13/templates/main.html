@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Outpatient's</title>
+    <style>span{color: red;}</style>
+</head>
+<body>
+    <form novalidate method="post">
+        <!-- csrf verify -->
+        {{form.hidden_tag()}}
+        <div>
+            <p>{{form.patient.label}}</p>
+            <p>{{form.patient(size=32)}}</p>
+            <p>
+                {%for error in form.patient.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.address.label}}</p>
+            <p>{{form.address(size=32)}}</p>
+            <p>
+                {%for error in form.address.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.contact.label}}</p>
+            <p>{{form.contact(size=32)}}</p>
+            <p>
+                {%for error in form.contact.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.gender.label}}</p>
+            <p>{{form.gender(size=32)}}</p>
+            <p>
+                {%for error in form.gender.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.symptoms.label}}</p>
+            <p>{{form.symptoms()}}</p>
+            <p>
+                {%for error in form.symptoms.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.age.label}}</p>
+            <p>{{form.age(size=32)}}</p>
+            <p>
+                {%for error in form.age.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.policy()}} {{form.policy.label}}</p>
+        </div>
+        <div>
+            {{form.submit()}}
+        </div>
+    </form>
+</body>
+</html>

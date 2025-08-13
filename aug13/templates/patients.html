@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Patients</title>
+</head>
+<body>
+    {% for each in data %}
+        <ul>
+            <li>{{each.patient}}</li>
+            <ol>
+                <li>{{each.age}}</li>
+                <li>{{each.symptoms}}</li>
+                <li>{{each.contact}}</li>
+            </ol>
+        </ul>
+    {%endfor%}
+</body>
+</html>
